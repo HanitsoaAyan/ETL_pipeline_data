@@ -1,0 +1,7 @@
+[
+  {"review_id": 1, "product_id": 1, "rating": 5, "comment": "Excellent clavier, très réactif", "review_date": "2024-01-10"},
+  {"review_id": 2, "product_id": 2, "rating": 4, "comment": "Bonne souris, autonomie correcte", "review_date": "2024-01-15"},
+  {"review_id": 3, "product_id": 1, "rating": 3, "comment": "Bruyant mais efficace", "review_date": "2024-02-02"},
+  {"review_id": 4, "product_id": 3, "rating": 5, "comment": "Son excellent pour le prix", "review_date": "2024-02-20"},
+  {"review_id": 5, "product_id": 4, "rating": 2, "comment": "Confort décevant", "review_date": "2024-03-01"}
+]

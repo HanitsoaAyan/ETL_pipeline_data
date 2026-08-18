@@ -1,0 +1,9 @@
+customer_id,name,email,signup_date,country,age
+1,  Alice Dupont ,alice@example.com,2023-01-15,France,29
+2,Bob Martin,bob@example.com,2023-02-20,France,
+3,Chloé Bernard,chloe@example.com,2023-03-05,Belgium,34
+4,David Leroy,,2023-04-10,France,41
+5,Alice Dupont,alice@example.com,2023-01-15,France,29
+6,Eva Petit,eva@example.com,2023-05-22,Switzerland,120
+7,Farid Nasri,farid@example.com,,Morocco,27
+8,Gabrielle Roy,gabrielle@example.com,2023-06-30,France,31
