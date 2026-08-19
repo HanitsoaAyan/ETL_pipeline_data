@@ -1,0 +1,1 @@
+[{"customer_id":1,"name":"Alice Dupont","order_id":101,"amount":59.9,"status":"completed"},{"customer_id":2,"name":"Bob Martin","order_id":102,"amount":120.0,"status":"pending"}]
