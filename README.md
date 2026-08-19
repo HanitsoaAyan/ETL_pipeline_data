@@ -22,7 +22,17 @@ Extract/
 ├── .env                        # identifiants de connexion (NE JAMAIS COMMITER)
 ├── .env.example                 # modèle du fichier .env, sans les vrais identifiants
 ├── .gitignore                    # exclut .env et raw/ du dépôt Git
-└── raw/                            # copies brutes générées à chaque exécution
+├── raw/                            # copies brutes générées à chaque exécution
+├── clean/                          # données transformées (module Validation & Transform)
+├── Load/                           # module de chargement dans le Data Warehouse
+│   ├── warehouse_schema.sql        #   crée la base "datawarehouse" + 4 tables
+│   ├── database.py                 #   connexion SQLAlchemy (variables .env)
+│   ├── load_dw.py                  #   charge clean/ dans le Data Warehouse
+│   ├── requirements.txt            #   dépendances Python
+│   ├── .env.example                #   modèle de configuration du module Load
+│   └── README.md                   #   documentation du module Load
+└── DataWarehouse/
+    └── schema.md                    # schéma en étoile du Data Warehouse
 
 Installation
 
@@ -119,4 +129,11 @@ Base MySQL operateur	Base de données	Utilisateurs (numéro, crédit)
 Base Neo4j	Graphe	Clients et commandes reliés par une relation PLACED
 Prochaine étape du pipeline
 
-Les données extraites par ce module sont destinées à être reprises par l'étape suivante : validation et transformation (contrôle qualité, nettoyage, standardisation), avant chargement dans le Data Warehouse.
+Les données extraites par ce module sont reprises par le module Validation & Transform (voir `clean/`), puis chargées dans le Data Warehouse par le module `Load` :
+
+```bash
+mysql -u root -p < Load/warehouse_schema.sql   # crée la base "datawarehouse"
+python Load/load_dw.py                         # charge dims + faits
+```
+
+La configuration du module Load (identifiants MySQL, dossier `clean/`) se fait via `.env` — voir `Load/README.md` et `Load/.env.example`. Le schéma en étoile est documenté dans `DataWarehouse/schema.md`.
